@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if msg %}
+<h2>{{msg}}</h2>
+{% endif %}
+<table border="1" style="margin-top: 10%;">
+<thead class="money">
+    <tr>
+        <th style="font-size: 15px;">Employee Name</th>
+        <th style="font-size: 15px;">Tax Rate</th>
+        <th style="font-size: 15px;">Monthly Salary</th>
+        <th style="font-size: 15px;">Over time in hour</th>
+        <th style="font-size: 15px;">Bonus</th>
+        <th style="font-size: 15px;">No of leave day</th>
+        <th style="font-size: 15px;">Total Salary</th>
+         </tr>
+</thead>
+
+<tbody class="money1">
+    {% for s in salary%}
+
+    <tr>
+      <td>
+        <h2 style="color: black;">{{s.user.first_name}}</h2>
+      </td>
+    
+        <td>
+            <h2 style="color: black;">{{s.tax}}</h2>
+        </td>
+        <td>
+            <h2 style="color: black;">{{s.salary}}</h2>
+        </td>
+        <td>
+            <h2 style="color: black;">{{s.overtimehour}}</h2>
+        </td>
+        <td>
+            <h2 style="color: black;">{{s.bonus}}</h2>
+        </td>
+        <td>
+            <h2 style="color: black;">{{s.no_of_leave_day}}</h2>
+        </td>
+        <td>
+            <h2 style="color: black;">{{s.total_salary}}</h2>
+        </td>
+    </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+
+{% endblock %}

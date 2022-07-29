@@ -1,0 +1,44 @@
+{% extends 'cust.html' %}
+{% block content %}
+{% if msz %}
+<h2>{{msz}}</h2>
+{% endif %}
+<br><br>
+<h2>Employee Information</h2><br>
+<form action="" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <label> Name</label><br>
+    <input type="text" name="name"><br>
+    <label> Phone Number</label><br>
+    <input type="number" name="phone"><br>
+    <label>Email</label><br>
+    <input type="text" name="email" ><br>
+
+    <label>Tax rate</label><br>
+    <input type="text" name="tax"><br>
+    
+    <label>Salary</label><br>
+    <input type="text" name="salary"><br>
+
+       
+    <label>Bonus</label><br>
+    <input type="text" name="bonus"><br>
+
+    <label>NO of leave days</label><br>
+    <input type="number" name="leave"><br>
+
+
+    <label>Woring status</label><br>
+    <select name="status">
+        <option value="part">Parttime</option>
+        <option value="over">Overtime</option>
+        <option value="normal">Normaltime</option>
+    </select><br>
+    <label>Overtime hour</label><br>
+    <input type="number" name="hour"><br>
+    <label>joining date</label><br>
+    <input type="text" name="join"><br>
+<br>
+    <input type="submit" value="Submit" class="inti">
+</form><br>
+    {% endblock %}
